@@ -21,9 +21,10 @@ const SearchBar = ({nEdit, cities, handleFilters}) => {
   }
 
   return (
-    <div className='d-flex pt-2 gap-2 justify-content-center'>
+    <div className='d-flex my-4 gap-2 justify-content-center align-items-center'>
       <label htmlFor="filters">Filtrar por</label>
       <input 
+        className='DocSearch Inputs'
         type="text" 
         placeholder='Documento' 
         name='NroDoc' 
@@ -32,6 +33,7 @@ const SearchBar = ({nEdit, cities, handleFilters}) => {
         disabled={enable}
       />
       <input 
+        className='ApeyNomSearch Inputs'
         type="text" 
         style={{"textTransform":"uppercase"}} 
         placeholder='Apellido y/o nombre' 
@@ -40,11 +42,11 @@ const SearchBar = ({nEdit, cities, handleFilters}) => {
         onChange={handleChange}
         disabled={enable}
       />
-      <select name="Depto" onChange={handleChange} disabled={enable} >
+      <select name="Depto" onChange={handleChange} disabled={enable} className='Inputs' >
         <option value='All' >Todas las localidades</option>
         {cities && cities.map( (c, ind) => <option value={c} key={ind}>{c}</option>)}
       </select>
-      <select name="Printers" onChange={handleChange} disabled={enable} >
+      <select name="Printers" onChange={handleChange} disabled={enable} className='Inputs' >
         <option value='All' >Todas las personas</option>
         <option value='Only printer' >Personas a imprimir</option>
         <option value='Only not printer' >Personas sin imprimir</option>

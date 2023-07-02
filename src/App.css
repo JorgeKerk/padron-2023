@@ -10,9 +10,29 @@
   width: 96vw;
 }
 .table {
-  margin-top:25rem;
+  margin-top:32rem;
 }
 
 .bodyTable{
   margin-top: 15rem;
+}
+
+.DocSearch{
+  max-width: 7rem;
+}
+
+.ApeyNomSearch{
+  min-width: 20rem;
+}
+
+.Inputs{
+  padding: 0.5rem 1rem;
+}
+
+.DocEdit{
+  max-width: 7rem;
+}
+
+.EscEdit{
+  min-width: 15rem;
 }

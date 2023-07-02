@@ -58,36 +58,36 @@ const FormEdit = ({cities, schools, nEdit, data, confirmEdit}) => {
   }
 
   return (
-    <form>
-      <div className='d-flex flex-column'>
-        <div className='d-flex'>
+    <form className='d-flex justify-content-center w-100'>
+      <div className='d-flex flex-column mb-4 align-items-center'>
+        <div className='d-flex gap-2 align-items-center justify-content-between '>
           <div className='d-flex flex-column'>
             <label htmlFor="Doc" className='fw-bold'>Documento</label>
-            <input type="text" name="doc" value={personData.doc} onChange={changeData} disabled={enable}/>
+            <input type="text" name="doc" value={personData.doc} onChange={changeData} disabled={enable} className='DocEdit Inputs'/>
           </div>
           <div className='d-flex flex-column'>
             <label htmlFor="ApeyNom" className='fw-bold'>Apellido y Nombre</label>
-            <input type="text" name="apeynom"value={personData.apeynom} onChange={changeData} disabled={enable}/>
+            <input type="text" name="apeynom"value={personData.apeynom} onChange={changeData} disabled={enable} className='Inputs'/>
           </div>
           <div className='d-flex flex-column'>
             <label htmlFor="Dom" className='fw-bold'>Domicilio</label>
-            <input type="text" name="dom" value={personData.dom} onChange={changeData} disabled={enable}/>
+            <input type="text" name="dom" value={personData.dom} onChange={changeData} disabled={enable} className='Inputs'/>
           </div>
           <div className='d-flex flex-column'>
             <label htmlFor="Depto" className='fw-bold'>Localidad</label>
-            <select name="depto" id="cities" value={personData.depto} onChange={changeData} disabled={enable}>
-            <option value={'Vacio'} ></option>
-              {cities && cities.map( (c, ind) => <option value={c} key={ind}>{c}</option>)}
+            <select name="depto" id="cities" value={personData.depto} onChange={changeData} disabled={enable} className='Inputs'>
+              <option value={'Vacio'} ></option>
+                {cities && cities.map( (c, ind) => <option value={c} key={ind}>{c}</option>)}
             </select>
           </div>
         </div>
-        <div className='d-flex'>
+        <div className='d-flex mt-3 gap-2 align-items-center justify-content-between'>
           <div className='d-flex flex-column'>
-            <div>
+            <div className='d-flex justify-content-between align-items-center'>
               <label htmlFor="Esc" className='fw-bold'>Escuela</label>
               <button 
               type="button" 
-              className="btn btn-secondary" 
+              className="btn btn-secondary ms-2 py-0 mb-1 " 
               onClick={changeFormEsc}
               disabled={enable}
               >{
@@ -97,37 +97,39 @@ const FormEdit = ({cities, schools, nEdit, data, confirmEdit}) => {
               }</button>
             </div>
             { formEsc
-              ? <input type="text" name="esc" value={personData.esc} onChange={changeData} disabled={enable}/>
-              : <select name="esc" id="school" value={personData.esc} onChange={changeData} disabled={enable}>
+              ? <input type="text" name="esc" value={personData.esc} onChange={changeData} disabled={enable} className='Inputs EscEdit'/>
+              : <select name="esc" id="school" value={personData.esc} onChange={changeData} disabled={enable} className='Inputs EscEdit'>
                   <option value={'Vacio'} ></option>
                     {schools && schools.map( (s, ind) => <option value={s} key={ind}>{s}</option>)}
                 </select>
             }
           </div>
-          <div className='d-flex flex-column'>
+          <div className='d-flex flex-column h-100 justify-content-between'>
             <label htmlFor="Mesa" className='fw-bold'>Mesa</label>
-            <input type="number" name="mesa" value={personData.mesa} onChange={changeData} disabled={enable}/>
+            <input type="number" name="mesa" value={personData.mesa} onChange={changeData} disabled={enable} className='Inputs'/>
           </div>
-          <div className='d-flex flex-column'>
+          <div className='d-flex flex-column h-100 justify-content-between'>
             <label htmlFor="Ord" className='fw-bold'>Orden</label>
-            <input type="number" name="ord" value={personData.ord} onChange={changeData} disabled={enable}/>
+            <input type="number" name="ord" value={personData.ord} onChange={changeData} disabled={enable} className='Inputs'/>
           </div>
-          <button 
-            type="button" 
-            className="btn btn-warning" 
-            onClick={changeAcept}
-            disabled={enable}
-          >
-            Aceptar
-          </button>
-          <button 
-            type="button" 
-            className="btn btn-secondary" 
-            onClick={confirmEdit}
-            disabled={enable}
-          >
-            Cancelar
-          </button>
+          <div className='d-flex h-100 justify-content-between align-items-center gap-2'>
+            <button 
+              type="button" 
+              className="btn btn-warning mt-4" 
+              onClick={changeAcept}
+              disabled={enable}
+            >
+              Aceptar
+            </button>
+            <button 
+              type="button" 
+              className="btn btn-secondary mt-4" 
+              onClick={confirmEdit}
+              disabled={enable}
+            >
+              Cancelar
+            </button>
+          </div>
         </div>
       </div>
     </form>

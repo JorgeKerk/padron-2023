@@ -26,7 +26,7 @@ const Pagination = ( {nEdit, dataFilter, changePage} ) => {
   }
   
   return (
-    <div>
+    <div className='d-flex mb-4 gap-1 flex-wrap justify-content-center'>
       {
       pages &&
       pages.map( (p, ind) => 
